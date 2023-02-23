@@ -1,33 +1,36 @@
+import java.util.ArrayList;
 public class Insecto {
     private String nombre;
     private int energia;
     public Insecto(String nombre){
-        energia=0;
-        nombre="Cleoptero";
+        this.energia=0;
+        this.nombre="Cleoptero";
     }
     public boolean pica(fruto frutapica){
-            if(frutapica.picado=false){
-                energia=energia+2;
+            if(frutapica.getPicado()==false){
+                this.energia=this.energia+2;
                 return true;
             }
             else{
                 return false; 
             }
     }
-    public void mitosis(){
-        if(energia>=10)
+    public Insecto mitosis(){
+        if(this.energia>=10)
         {
-            energia=energia-5;
-            Insecto nuevo_insecto=new Insecto(nombre);
+            this.energia=this.energia-5;
+            Insecto nuevo_insecto=new Insecto(this.nombre);
+            return nuevo_insecto;
         }
+        return null;
     }
     public void cazado(){
-        energia=0;
+        this.energia=0;
     }
     public int getEnergia(){
-        return energia;
+        return this.energia;
     }
     public String getNombre(){
-        return nombre;
+        return this.nombre;
     }
 }

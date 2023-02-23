@@ -1,55 +1,55 @@
+import java.util.ArrayList;
 public class fruto{
-    public String nombre;
+    private String nombre;
     private int madurez;
-    public boolean picado;
-    public boolean plantado;
-    public fruto(String nombre,int madurez,boolean picado,boolean plantado){
-        this.nombre=nombre;
-        this.madurez=madurez;
-        this.picado=picado;
-        this.plantado=plantado;
-    }
-        public String constructor(String nombre,boolean plantado){
+    private boolean picado;
+    private boolean plantado;
+    public fruto(String nom,int madur,boolean picat,boolean plantat){
+            this.nombre=nom;
+            this.madurez=madur;
+            this.picado=picat;
+            this.plantado=plantat;
             if(nombre==null){
-                nombre="Eversade";
-                plantado=true;
-                System.out.println(nombre);
+                this.nombre="Eversade";
             }
-            return nombre;
+            else{
+                this.nombre=nom;
+            }
+            this.plantado=true;
+    }
+        public String getNombre(){
+            return this.nombre;
         }
-        public String getNombre(String nombre){
-            return nombre;
+        public int getMadurez(){
+            return this.madurez;
         }
-        public int getMadurez(int madurez){
-            return madurez;
+        public boolean getPicado(){
+            return this.picado;
         }
-        public boolean getPicado(boolean picado){
-            return picado;
-        }
-        public boolean getPlantado(Boolean plantado){
-            return plantado;
+        public boolean getPlantado(){
+            return this.plantado;
         }
         public void setPicado(){
-            picado=true;
+            this.picado=true;
         }
-        public void riega(boolean picado){
-            if(picado=false){
-                madurez=madurez+1;
+        public void riega(){
+            if(this.picado=false){
+                this.madurez=this.madurez+1;
             }
         }
-        public void abona(boolean picado){
-            picado=false;
-            madurez=madurez+2;
+        public void abona(){
+            this.picado=false;
+            this.madurez=this.madurez+2;
         }
-        public int procesa(String nombre,boolean picado,int madurez){
+        public int procesa(){
             if(nombre!=null)
             {
                 int procesado;
                 procesado=(nombre.length()/2)+madurez;
-                if(picado==true){
+                if(this.picado==true){
                     procesado=procesado/3;
                 }
-                nombre=null;
+                this.nombre=null;
                 return procesado;
             }
             else{
